@@ -9,11 +9,41 @@
     tools:context=".RecipeActivity" >
 
     <TableRow
-        android:id="@+id/recipeRow1"
+        android:id="@+id/recipeNameRow"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true" >
+    
+        <TextView
+            android:id="@+id/recipeName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+        
+    </TableRow>
+    <TableRow
+        android:id="@+id/recipeNameTextRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/recipeNameRow" >
+    
+        <EditText
+            android:id="@+id/recipeNameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="text" />
+        
+    </TableRow>
+    <TableRow
+        android:id="@+id/ingredientTitleRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/recipeNameTextRow" >
 
         <TextView
             android:id="@+id/ingredientTitle"
@@ -24,11 +54,11 @@
     </TableRow>
 
     <TableRow
-        android:id="@+id/recipeRow2"
+        android:id="@+id/hopsRow"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/recipeRow1" >
+        android:layout_below="@+id/ingredientTitleRow" >
 
         <TextView
             android:id="@+id/hopsTitle"
@@ -44,16 +74,15 @@
             android:ems="10"
             android:inputType="text" >
 
-            <requestFocus />
         </EditText>
     </TableRow>
 
     <TableRow
-        android:id="@+id/recipeRow3"
+        android:id="@+id/maltRow"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/recipeRow2" >
+        android:layout_below="@+id/hopsRow" >
 
         <TextView
             android:id="@+id/maltTitle"
@@ -73,11 +102,11 @@
     </TableRow>
 
     <TableRow
-        android:id="@+id/recipeRow4"
+        android:id="@+id/grainRow"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/recipeRow3" >
+        android:layout_below="@+id/maltRow" >
 
         <TextView
             android:id="@+id/grainTitle"
@@ -96,11 +125,11 @@
     </TableRow>
 
     <TableRow
-        android:id="@+id/recipeRow5"
+        android:id="@+id/directionsTitleRow"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/recipeRow4"
+        android:layout_below="@+id/grainRow"
         android:addStatesFromChildren="true" >
 
         <TextView
@@ -113,14 +142,14 @@
     </TableRow>
 
     <TableRow
-        android:id="@+id/recipeRow6"
+        android:id="@+id/directionsTextRow"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/recipeRow5" >
+        android:layout_below="@+id/directionsTitleRow" >
 
         <EditText
-            android:id="@+id/editText1"
+            android:id="@+id/directionsText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textMultiLine" />
