@@ -14,8 +14,7 @@ public class MainActivity extends Activity {
 
 	private Button newRecipeButton;
 	private Button recipeBookButton;
-	
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -32,7 +31,7 @@ public class MainActivity extends Activity {
 		getMenuInflater().inflate(R.menu.open_brew_main, menu);
 		return true;
 	}
-	
+
 	private OnClickListener newRecipeListener = new OnClickListener() {
 		@Override
 		public void onClick(View v) {
@@ -40,5 +39,4 @@ public class MainActivity extends Activity {
 			MainActivity.this.startActivity(newRecipeIntent);
 		}
 	};
-
 }
