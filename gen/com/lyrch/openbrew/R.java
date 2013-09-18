@@ -24,35 +24,39 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f080018;
-        public static final int directionsText=0x7f080016;
-        public static final int directionsTextRow=0x7f080015;
-        public static final int directionsTitle=0x7f080014;
-        public static final int directionsTitleRow=0x7f080013;
-        public static final int grainRow=0x7f080010;
-        public static final int grainText=0x7f080012;
-        public static final int grainTitle=0x7f080011;
-        public static final int hopsRow=0x7f08000a;
-        public static final int hopsText=0x7f08000c;
-        public static final int hopsTitle=0x7f08000b;
-        public static final int ingredientTitle=0x7f080009;
-        public static final int ingredientTitleRow=0x7f080008;
-        public static final int mainRow1=0x7f080000;
-        public static final int mainRow2=0x7f080002;
-        public static final int maltRow=0x7f08000d;
-        public static final int maltText=0x7f08000f;
-        public static final int maltTitle=0x7f08000e;
-        public static final int newRecipeButton=0x7f080001;
-        public static final int recipeBookButton=0x7f080003;
-        public static final int recipeName=0x7f080005;
-        public static final int recipeNameRow=0x7f080004;
-        public static final int recipeNameText=0x7f080007;
-        public static final int recipeNameTextRow=0x7f080006;
-        public static final int saveButton=0x7f080017;
+        public static final int TextView01=0x7f080000;
+        public static final int action_settings=0x7f08001a;
+        public static final int directionsText=0x7f080018;
+        public static final int directionsTextRow=0x7f080017;
+        public static final int directionsTitle=0x7f080016;
+        public static final int directionsTitleRow=0x7f080015;
+        public static final int grainRow=0x7f080012;
+        public static final int grainText=0x7f080014;
+        public static final int grainTitle=0x7f080013;
+        public static final int hopsRow=0x7f08000c;
+        public static final int hopsText=0x7f08000e;
+        public static final int hopsTitle=0x7f08000d;
+        public static final int ingredientTitle=0x7f08000b;
+        public static final int ingredientTitleRow=0x7f08000a;
+        public static final int mainRow1=0x7f080001;
+        public static final int mainRow2=0x7f080003;
+        public static final int maltRow=0x7f08000f;
+        public static final int maltText=0x7f080011;
+        public static final int maltTitle=0x7f080010;
+        public static final int newRecipeButton=0x7f080002;
+        public static final int recipeBookButton=0x7f080004;
+        public static final int recipeListView=0x7f080005;
+        public static final int recipeName=0x7f080007;
+        public static final int recipeNameRow=0x7f080006;
+        public static final int recipeNameText=0x7f080009;
+        public static final int recipeNameTextRow=0x7f080008;
+        public static final int saveButton=0x7f080019;
     }
     public static final class layout {
-        public static final int activity_open_brew_main=0x7f030000;
-        public static final int activity_recipe=0x7f030001;
+        public static final int list_row=0x7f030000;
+        public static final int open_brew_main_layout=0x7f030001;
+        public static final int recipe_book_layout=0x7f030002;
+        public static final int recipe_layout=0x7f030003;
     }
     public static final class menu {
         public static final int open_brew_main=0x7f070000;

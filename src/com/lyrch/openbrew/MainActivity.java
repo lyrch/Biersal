@@ -18,11 +18,12 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_open_brew_main);
+		setContentView(R.layout.open_brew_main_layout);
 		
 		newRecipeButton = (Button) findViewById(R.id.newRecipeButton);
 		newRecipeButton.setOnClickListener(newRecipeListener);
 		recipeBookButton = (Button) findViewById(R.id.recipeBookButton);
+		recipeBookButton.setOnClickListener(recipeBookListener);
 	}
 
 	@Override
@@ -37,6 +38,14 @@ public class MainActivity extends Activity {
 		public void onClick(View v) {
 			Intent newRecipeIntent = new Intent(MainActivity.this, RecipeActivity.class);
 			MainActivity.this.startActivity(newRecipeIntent);
+		}
+	};
+	
+	private OnClickListener recipeBookListener = new OnClickListener() {
+		@Override
+		public void onClick(View v) {
+			Intent recipeBookIntent = new Intent(MainActivity.this, RecipeBookActivity.class);
+			MainActivity.this.startActivity(recipeBookIntent);
 		}
 	};
 }

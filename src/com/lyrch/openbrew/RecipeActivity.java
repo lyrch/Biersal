@@ -41,14 +41,13 @@ public class RecipeActivity extends Activity {
 			CharSequence text = "Recipe Saved!";
 			int duration = Toast.LENGTH_SHORT;
 			Toast.makeText(context, text, duration).show();
-			Toast.makeText(context, name.getText().toString(), duration).show();
 		}
 	};
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_recipe);
+		setContentView(R.layout.recipe_layout);
 
 		saveRecipeButton = (Button) findViewById(R.id.saveButton);
 		saveRecipeButton.setOnClickListener(saveRecipeListener);
