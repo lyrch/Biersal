@@ -5,6 +5,7 @@ import java.io.IOException;
 import com.lyrch.openbrew.R;
 
 import android.app.Activity;
+import android.app.ListActivity;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,11 +13,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
 
-public class RecipeBookActivity extends Activity {
+public class RecipeBookActivity extends ListActivity {
 
 	private ListView recipeListView;
     String[] recipes = { "nothing here!"};
@@ -27,17 +29,16 @@ public class RecipeBookActivity extends Activity {
 	}
 	
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.recipe_book_layout);
-		recipeListView = (ListView) findViewById(R.id.recipeListView);
 		findRecipes();
 		
 		setViewAdapter();
 	}
 
 	private void setViewAdapter() {
-		recipeListView.setAdapter(new BaseAdapter() {
+		ListAdapter adapter = new BaseAdapter() {
 			public int getCount() {
 				return recipes.length;
 			}
@@ -58,7 +59,8 @@ public class RecipeBookActivity extends Activity {
 				textView.setText(recipes[position]);
 				return view;
 			}
-		});
+		};
+		setListAdapter(adapter);
 	}
 
 }
