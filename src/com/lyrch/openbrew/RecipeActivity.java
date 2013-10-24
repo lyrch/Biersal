@@ -1,9 +1,11 @@
 package com.lyrch.openbrew;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -16,6 +18,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlSerializer;
 import android.util.Xml;
 
@@ -43,12 +46,8 @@ public class RecipeActivity extends Activity {
 			Toast.makeText(context, text, duration).show();
 		}
 	};
-
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.recipe_layout);
-
+	
+	private void connectLayout(){
 		saveRecipeButton = (Button) findViewById(R.id.saveButton);
 		saveRecipeButton.setOnClickListener(saveRecipeListener);
 
@@ -57,6 +56,96 @@ public class RecipeActivity extends Activity {
 		malt =       (EditText) findViewById(R.id.maltText);
 		grain =      (EditText) findViewById(R.id.grainText);
 		directions = (EditText) findViewById(R.id.directionsText);
+	}
+	
+	private void parseIngredient(String nodeName, String nodeValue){
+		System.out.println("Name: "+nodeName);
+		System.out.println("Value: "+nodeValue);
+//		String nodeName = recipe.getName();
+//		String nodeValue = recipe.next().getText();
+		if ("name" == nodeName){
+			nameString = nodeValue;
+		}
+		else if ("hops" == nodeName){
+			hopsString = nodeValue;
+		}
+		else if ("malt" == nodeName){
+			maltString = nodeValue;
+		}
+		else if ("grain" == nodeName){
+			grainString = nodeValue;
+		}
+		else if ("directions" == nodeName){
+			directionsString = nodeValue;
+		}
+	}
+	
+	private void setRecipe(){
+		name.setText(nameString);
+		hops.setText(hopsString);
+		malt.setText(maltString);
+		grain.setText(grainString);
+		directions.setText(directionsString);
+	}
+	
+	private void loadRecipe(String fileName){
+		FileInputStream fis;
+		InputStreamReader fileReader;
+		XmlPullParser recipe = Xml.newPullParser();
+		try{
+			fis = new FileInputStream(getFilesDir()+"/"+fileName);
+			fileReader = new InputStreamReader(fis);
+			
+			recipe.setInput(fileReader);
+			int eventType = recipe.getEventType();
+		    boolean done = false;
+		    String nodeName = "";
+		    String nodeValue = "";
+		    while (eventType != XmlPullParser.END_DOCUMENT && !done){
+		        switch (eventType){
+		        	case XmlPullParser.PROCESSING_INSTRUCTION:
+		        		break;
+		            case XmlPullParser.START_DOCUMENT:
+		                break;
+		            case XmlPullParser.START_TAG:
+		            	nodeName = recipe.getName();
+		            	break;
+		            case XmlPullParser.TEXT:
+		            	nodeValue = recipe.getText();
+		            	parseIngredient(nodeName, nodeValue);
+		            	break;
+		            case XmlPullParser.END_TAG:
+		            	break;
+		            case XmlPullParser.END_DOCUMENT:
+		            	break;
+		            default:
+		            	break;
+		        }
+		        eventType = recipe.next();
+		    }
+		    setRecipe();
+		} catch (FileNotFoundException e) {
+		    // TODO
+		} catch (IOException e) {
+		    // TODO
+		} catch (Exception e){
+		    // TODO
+			System.out.println(e.getMessage());
+		}
+	}
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.recipe_layout);
+		
+		connectLayout();
+		
+		Bundle recipeBundle = this.getIntent().getExtras();
+		if (null != recipeBundle)
+			loadRecipe(recipeBundle.getString("RecipeFile"));
+
+		
 	}
 
 	private void saveRecipe() {
