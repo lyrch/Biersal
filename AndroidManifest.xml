@@ -30,10 +30,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="com.lyrch.openbrew.MainActivity"
-            android:label="@string/title_activity_open_brew_main" >
-        </activity>
     </application>
 
 </manifest>
