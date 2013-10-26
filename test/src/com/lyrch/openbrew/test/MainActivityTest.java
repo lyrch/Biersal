@@ -1,23 +1,42 @@
 package com.lyrch.openbrew.test;
 
 import com.lyrch.openbrew.MainActivity;
-import android.test.ActivityInstrumentationTestCase2;
+
+import android.content.Intent;
+import android.test.ActivityUnitTestCase;
 import android.widget.Button;
 
-public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActivity> {
+public class MainActivityTest extends ActivityUnitTestCase<MainActivity> {
 
 	MainActivity mActivity;
-	Button       mNewRecipe;
+	
 	
 	public MainActivityTest() {
-		super("com.lyrch.openbrew", MainActivity.class);
+		super(MainActivity.class);
 	}
 	
 	@Override
 	public void setUp() throws Exception {
 		super.setUp();
-		setActivityInitialTouchMode(false);
+		Intent intent = new Intent(getInstrumentation().getTargetContext(),
+		                           MainActivity.class);
+		startActivity(intent, null, null);
 		mActivity = getActivity();
+	}
+	
+	public void tesNewRecipeButtonIsCorrect() {
+		Button       mNewRecipe;
 		mNewRecipe = (Button) mActivity.findViewById(com.lyrch.openbrew.R.id.newRecipeButton);
+		assertNotNull("Missing the New Recipe button", mNewRecipe);
+		assertEquals("Wrong text", "New Recipe", mNewRecipe.getText());
+	}
+	
+	public void testNewRecipeIntent() {
+		Button       mNewRecipe;
+		mNewRecipe = (Button) mActivity.findViewById(com.lyrch.openbrew.R.id.newRecipeButton);
+		mNewRecipe.performClick();
+		
+		Intent triggeredIntent = getStartedActivityIntent();
+		assertNotNull(triggeredIntent);
 	}
 }

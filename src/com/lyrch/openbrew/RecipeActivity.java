@@ -89,6 +89,7 @@ public class RecipeActivity extends Activity {
 	}
 	
 	private void loadRecipe(String fileName){
+		//The values should be attribues of the nodes
 		FileInputStream fis;
 		InputStreamReader fileReader;
 		XmlPullParser recipe = Xml.newPullParser();
