@@ -15,4 +15,6 @@
     <string name="new_recipe">New Recipe</string>
     <string name="recipe_book">My Recipe Book</string>
     <string name="no_recipes">No Saved Recipes</string>
+    <string name="title_activity_recipe">RecipeActivity</string>
+
 </resources>

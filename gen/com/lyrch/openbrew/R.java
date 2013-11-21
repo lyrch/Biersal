@@ -45,10 +45,10 @@ public final class R {
         public static final int maltTitle=0x7f08000f;
         public static final int newRecipeButton=0x7f080002;
         public static final int recipeBookButton=0x7f080004;
-        public static final int recipeName=0x7f080006;
         public static final int recipeNameRow=0x7f080005;
         public static final int recipeNameText=0x7f080008;
         public static final int recipeNameTextRow=0x7f080007;
+        public static final int recipeNameTitle=0x7f080006;
         public static final int saveButton=0x7f080018;
     }
     public static final class layout {
@@ -59,6 +59,7 @@ public final class R {
     }
     public static final class menu {
         public static final int open_brew_main=0x7f070000;
+        public static final int recipe=0x7f070001;
     }
     public static final class string {
         public static final int action_settings=0x7f050002;
@@ -75,6 +76,7 @@ public final class R {
         public static final int specialty=0x7f050007;
         public static final int step=0x7f050009;
         public static final int title=0x7f050000;
+        public static final int title_activity_recipe=0x7f05000e;
     }
     public static final class style {
         /** 

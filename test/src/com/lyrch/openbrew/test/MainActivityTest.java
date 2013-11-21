@@ -24,7 +24,7 @@ public class MainActivityTest extends ActivityUnitTestCase<MainActivity> {
 		mActivity = getActivity();
 	}
 	
-	public void tesNewRecipeButtonIsCorrect() {
+	public void testNewRecipeButtonIsCorrect() {
 		Button       mNewRecipe;
 		mNewRecipe = (Button) mActivity.findViewById(com.lyrch.openbrew.R.id.newRecipeButton);
 		assertNotNull("Missing the New Recipe button", mNewRecipe);
