@@ -26,9 +26,15 @@ public class RecipeActivityTest extends ActivityUnitTestCase<RecipeActivity> {
 	}
 
 	public void testRecipeNameLayout() {
-		String nameText = (String) mActivity.getString(com.lyrch.openbrew.R.string.title);
-		TextView nameTitle = (TextView) mActivity.findViewById(com.lyrch.openbrew.R.id.recipeNameTitle);
-		assertEquals( "Wrong Text", nameText, nameTitle.getText());
+		String nameTitleText = (String) mActivity.getString(com.lyrch.openbrew.R.string.recipe_name_title);
+		TextView nameTitle = (TextView) mActivity.findViewById(com.lyrch.openbrew.R.id.recipe_name_title_text);
+		assertEquals( "Wrong Text", nameTitleText, nameTitle.getText());
+	}
+	
+	public void testIngredientAddButton() {
+		String addButtonText = (String) mActivity.getString(com.lyrch.openbrew.R.string.add_ingredient);
+		TextView addButton = (TextView) mActivity.findViewById(com.lyrch.openbrew.R.id.add_ingredient_button);
+		assertEquals( "Wrong Text", addButtonText, addButton.getText());
 	}
 
 	

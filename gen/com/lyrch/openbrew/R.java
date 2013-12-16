@@ -25,31 +25,17 @@ public final class R {
     }
     public static final class id {
         public static final int TextView01=0x7f080000;
-        public static final int action_settings=0x7f080019;
-        public static final int directionsText=0x7f080017;
-        public static final int directionsTextRow=0x7f080016;
-        public static final int directionsTitle=0x7f080015;
-        public static final int directionsTitleRow=0x7f080014;
-        public static final int grainRow=0x7f080011;
-        public static final int grainText=0x7f080013;
-        public static final int grainTitle=0x7f080012;
-        public static final int hopsRow=0x7f08000b;
-        public static final int hopsText=0x7f08000d;
-        public static final int hopsTitle=0x7f08000c;
-        public static final int ingredientTitle=0x7f08000a;
-        public static final int ingredientTitleRow=0x7f080009;
+        public static final int action_settings=0x7f08000b;
+        public static final int add_ingredient_button=0x7f080009;
         public static final int mainRow1=0x7f080001;
         public static final int mainRow2=0x7f080003;
-        public static final int maltRow=0x7f08000e;
-        public static final int maltText=0x7f080010;
-        public static final int maltTitle=0x7f08000f;
         public static final int newRecipeButton=0x7f080002;
+        public static final int recipeAddIngredientRow=0x7f080008;
         public static final int recipeBookButton=0x7f080004;
-        public static final int recipeNameRow=0x7f080005;
-        public static final int recipeNameText=0x7f080008;
+        public static final int recipeIngredientListRow=0x7f08000a;
         public static final int recipeNameTextRow=0x7f080007;
-        public static final int recipeNameTitle=0x7f080006;
-        public static final int saveButton=0x7f080018;
+        public static final int recipeNameTitleRow=0x7f080005;
+        public static final int recipe_name_title_text=0x7f080006;
     }
     public static final class layout {
         public static final int list_row=0x7f030000;
@@ -62,21 +48,21 @@ public final class R {
         public static final int recipe=0x7f070001;
     }
     public static final class string {
-        public static final int action_settings=0x7f050002;
-        public static final int app_name=0x7f050001;
-        public static final int directions=0x7f050008;
-        public static final int grain=0x7f050006;
-        public static final int hops=0x7f050004;
-        public static final int ingredients=0x7f050003;
-        public static final int malt=0x7f050005;
-        public static final int new_recipe=0x7f05000b;
-        public static final int no_recipes=0x7f05000d;
-        public static final int recipe_book=0x7f05000c;
-        public static final int save=0x7f05000a;
-        public static final int specialty=0x7f050007;
-        public static final int step=0x7f050009;
-        public static final int title=0x7f050000;
-        public static final int title_activity_recipe=0x7f05000e;
+        public static final int action_settings=0x7f050001;
+        public static final int add_ingredient=0x7f05000d;
+        public static final int app_name=0x7f050000;
+        public static final int directions=0x7f050007;
+        public static final int grain=0x7f050005;
+        public static final int hops=0x7f050003;
+        public static final int ingredients=0x7f050002;
+        public static final int malt=0x7f050004;
+        public static final int new_recipe=0x7f05000a;
+        public static final int no_recipes=0x7f05000c;
+        public static final int recipe_book=0x7f05000b;
+        public static final int recipe_name_title=0x7f05000e;
+        public static final int save=0x7f050009;
+        public static final int specialty=0x7f050006;
+        public static final int step=0x7f050008;
     }
     public static final class style {
         /** 
