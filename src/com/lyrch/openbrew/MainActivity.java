@@ -33,5 +33,5 @@ public class MainActivity extends Activity {
                 Intent newRecipeIntent = new Intent(MainActivity.this, RecipeActivity.class);
                 MainActivity.this.startActivity(newRecipeIntent);
         }
-};
+	};
 }

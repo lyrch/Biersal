@@ -4,6 +4,7 @@ import com.lyrch.openbrew.RecipeActivity;
 
 import android.content.Intent;
 import android.test.ActivityUnitTestCase;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class RecipeActivityTest extends ActivityUnitTestCase<RecipeActivity> {
@@ -36,7 +37,13 @@ public class RecipeActivityTest extends ActivityUnitTestCase<RecipeActivity> {
 		TextView addButton = (TextView) mActivity.findViewById(com.lyrch.openbrew.R.id.add_ingredient_button);
 		assertEquals( "Wrong Text", addButtonText, addButton.getText());
 	}
-
 	
-
+	public void testAddIngredientIntent() {	
+		TextView       mNewIngrdient;
+		mNewIngrdient = (TextView) mActivity.findViewById(com.lyrch.openbrew.R.id.add_ingredient_button);
+		mNewIngrdient.performClick();
+		
+		Intent triggeredIntent = getStartedActivityIntent();
+		assertNotNull(triggeredIntent);		
+	}
 }
