@@ -2,7 +2,6 @@ package com.lyrch.openbrew;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.widget.TextView;
 
 public class IngredientActivity extends Activity {
 
