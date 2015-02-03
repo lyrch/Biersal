@@ -8,7 +8,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.AdapterView.OnItemSelectedListener;
-import android.widget.TextView;
 
 public class IngredientActivity extends Activity {
 
@@ -26,7 +25,7 @@ public class IngredientActivity extends Activity {
 		this.mIngredientTypeAdapter = ArrayAdapter.createFromResource(this, R.array.ingredient_types, android.R.layout.simple_spinner_item);
 		this.mIngredientTypeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		mIngredientSpinner.setAdapter(mIngredientTypeAdapter);
-		OnItemSelectedListener spinnerListener = new myOnItemSelectedListener(this, this.mIngredientTypeAdapter);
+		OnItemSelectedListener spinnerListener = new ingredientSelectedListener(this, this.mIngredientTypeAdapter);
 	    mIngredientSpinner.setOnItemSelectedListener(spinnerListener);
 	}
 	
@@ -37,15 +36,15 @@ public class IngredientActivity extends Activity {
 		return true;
 	}
 	
-	public class myOnItemSelectedListener implements OnItemSelectedListener {
+	public class ingredientSelectedListener implements OnItemSelectedListener {
 
         ArrayAdapter<CharSequence> mLocalAdapter;
         Activity mLocalContext;
 
-        public myOnItemSelectedListener(Activity c, ArrayAdapter<CharSequence> ad) {
+        public ingredientSelectedListener(Activity context, ArrayAdapter<CharSequence> adapter) {
 
-          this.mLocalContext = c;
-          this.mLocalAdapter = ad;
+          this.mLocalContext = context;
+          this.mLocalAdapter = adapter;
 
         }
 

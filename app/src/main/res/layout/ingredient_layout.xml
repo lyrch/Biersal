@@ -15,11 +15,6 @@
             android:text="@string/ingredient_type"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
-        <Spinner
-            android:id="@+id/ingredient_type_spinner"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
     </TableRow>
     
     <TableRow
@@ -27,13 +22,46 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" >
 
+        <Spinner
+            android:id="@+id/ingredient_type_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_span="2" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
         <TextView
             android:id="@+id/ingredient_amount_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/ingredient_amount"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
-        
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_column="0" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/editText"
+            android:layout_column="0"
+            android:maxWidth="50sp" />
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/measurmentSpinner"
+            android:layout_column="1" />
     </TableRow>
 
 </TableLayout>
