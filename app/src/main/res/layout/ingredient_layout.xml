@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ingredientLayout"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent">
+
+<TableLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
 
     <TableRow
         android:id="@+id/ingredientLayoutRow1"
@@ -15,53 +21,22 @@
             android:text="@string/ingredient_type"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
+        <TableRow
+            android:id="@+id/ingredientLayoutRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <Spinner
+                android:id="@+id/ingredient_type_spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_span="2" />
+        </TableRow>
     </TableRow>
-    
-    <TableRow
-        android:id="@+id/ingredientLayoutRow2"
+    </TableLayout>
+    <ViewStub
+        android:id="@+id/ingredientStub"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
-
-        <Spinner
-            android:id="@+id/ingredient_type_spinner"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_column="0"
-            android:layout_span="2" />
-    </TableRow>
-
-    <TableRow
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
-
-        <TextView
-            android:id="@+id/ingredient_amount_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/ingredient_amount"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:layout_column="0" />
-
-    </TableRow>
-
-    <TableRow
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:ems="10"
-            android:id="@+id/editText"
-            android:layout_column="0"
-            android:maxWidth="50sp" />
-
-        <Spinner
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/measurmentSpinner"
-            android:layout_column="1" />
-    </TableRow>
-
-</TableLayout>
+        android:layout_height="wrap_content" />
+</LinearLayout>
