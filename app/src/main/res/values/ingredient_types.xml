@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string-array name="ingredient_types">
-        <item></item>
-	    <item>Hops</item>
-	    <item>Grain</item>
-	    <item>Liquid Malt</item>
-	    <item>Powdered Malt</item>
-	    <item>Liquid Yeast</item>
-	    <item>Dehydrated Yeast</item>
-	    <item>Water</item>
-	    <item>Adjunct</item>
-	</string-array>    
+	    <item>@string/hops</item>
+	    <item>@string/grain</item>
+	    <item>@string/liquid_malt</item>
+	    <item>@string/powdered_malt</item>
+	    <item>@string/liquid_yeast</item>
+	    <item>@string/dehydrated_yeast</item>
+	    <item>@string/water</item>
+	    <item>@string/adjunct</item>
+	</string-array>
 </resources>
