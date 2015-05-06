@@ -1,5 +1,5 @@
-OpenBrew
-========
+LibreBrew
+=========
 
 ** Feature Goals
 
