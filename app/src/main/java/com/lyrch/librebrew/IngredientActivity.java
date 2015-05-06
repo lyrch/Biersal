@@ -1,4 +1,4 @@
-package com.lyrch.openbrew;
+package com.lyrch.librebrew;
 
 import android.app.ListActivity;
 import android.content.Context;
@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 
@@ -27,6 +28,14 @@ public class IngredientActivity extends ListActivity {
         ingredients = resources.getStringArray(R.array.ingredient_types);
 
         setAdapter();
+    }
+
+    protected void onListItemClick(ListView listView, View view, int position, long id) {
+        super.onListItemClick(listView, view, position, id);
+        String ingredient=ingredients[position].toString();
+        System.out.println(ingredient);
+//        Bundle ingredientBundle = new Bundle();
+//        ingredientBundle.putString("RecipeFile", ingredient);
     }
 
     private void setAdapter() {

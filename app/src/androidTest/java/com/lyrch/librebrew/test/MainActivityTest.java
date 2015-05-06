@@ -1,6 +1,6 @@
-package com.lyrch.openbrew.test;
+package com.lyrch.librebrew.test;
 
-import com.lyrch.openbrew.MainActivity;
+import com.lyrch.librebrew.MainActivity;
 
 import android.content.Intent;
 import android.test.ActivityUnitTestCase;
@@ -26,14 +26,14 @@ public class MainActivityTest extends ActivityUnitTestCase<MainActivity> {
 	
 	public void testNewRecipeButtonIsCorrect() {
 		Button       mNewRecipe;
-		mNewRecipe = (Button) mActivity.findViewById(com.lyrch.openbrew.R.id.newRecipeButton);
+		mNewRecipe = (Button) mActivity.findViewById(com.lyrch.librebrew.R.id.newRecipeButton);
 		assertNotNull("Missing the New Recipe button", mNewRecipe);
 		assertEquals("Wrong text", "New Recipe", mNewRecipe.getText());
 	}
 	
 	public void testNewRecipeIntent() {
 		Button       mNewRecipe;
-		mNewRecipe = (Button) mActivity.findViewById(com.lyrch.openbrew.R.id.newRecipeButton);
+		mNewRecipe = (Button) mActivity.findViewById(com.lyrch.librebrew.R.id.newRecipeButton);
 		mNewRecipe.performClick();
 		
 		Intent triggeredIntent = getStartedActivityIntent();

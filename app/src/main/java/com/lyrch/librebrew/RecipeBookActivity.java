@@ -1,7 +1,5 @@
-package com.lyrch.openbrew;
+package com.lyrch.librebrew;
 import java.io.File;
-
-import com.lyrch.openbrew.R;
 
 import android.app.ListActivity;
 import android.content.Intent;

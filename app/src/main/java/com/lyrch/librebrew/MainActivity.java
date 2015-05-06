@@ -1,4 +1,4 @@
-package com.lyrch.openbrew;
+package com.lyrch.librebrew;
 
 import java.io.File;
 import android.os.Bundle;
@@ -9,8 +9,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.Toast;
-
-import java.io.File;
 
 public class MainActivity extends Activity {
 	

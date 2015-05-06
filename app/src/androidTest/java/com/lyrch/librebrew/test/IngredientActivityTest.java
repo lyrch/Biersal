@@ -1,9 +1,7 @@
-package com.lyrch.openbrew.test;
+package com.lyrch.librebrew.test;
 
-import com.lyrch.openbrew.IngredientActivity;
-import com.lyrch.openbrew.RecipeActivity;
+import com.lyrch.librebrew.IngredientActivity;
 
-import android.content.Intent;
 import android.content.res.Resources;
 import android.test.ActivityInstrumentationTestCase2;
 import android.view.KeyEvent;
@@ -32,7 +30,7 @@ public class IngredientActivityTest extends ActivityInstrumentationTestCase2<Ing
         System.out.println("Setting up.");
 	    mActivity = getActivity();
 	    
-	    mSpinner = (Spinner) mActivity.findViewById(com.lyrch.openbrew.R.id.ingredient_type_spinner);
+	    mSpinner = (Spinner) mActivity.findViewById(com.lyrch.librebrew.R.id.ingredient_type_spinner);
 	    mIngredientTypes = mSpinner.getAdapter();
 	}
 	
@@ -63,7 +61,7 @@ public class IngredientActivityTest extends ActivityInstrumentationTestCase2<Ing
 	    mSelection = (String)mSpinner.getItemAtPosition(mPos);
 
 	    Resources res = mActivity.getResources();
-	    String[] ingredients = res.getStringArray(com.lyrch.openbrew.R.array.ingredient_types);
+	    String[] ingredients = res.getStringArray(com.lyrch.librebrew.R.array.ingredient_types);
 	    assertEquals(ingredients[TEST_POSITION],mSelection);
 	}
 }

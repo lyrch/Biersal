@@ -1,4 +1,4 @@
-package com.lyrch.openbrew;
+package com.lyrch.librebrew;
 
 import android.os.Bundle;
 import android.app.Activity;

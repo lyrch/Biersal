@@ -6,7 +6,9 @@
     <TextView
         android:text="TextView01"
         android:id="@+id/TextView01"
-        
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textIsSelectable="true"
+        android:textSize="35sp"/>
+
 </LinearLayout>
