@@ -23,5 +23,7 @@
     <string name="add_ingredient">+ Add Ingredient</string>
     <string name="recipe_name_title">Recipe Name:</string>
     <string name="ingredient_amount">Amount:</string>
-    
+    <string name="title_activity_ingredient">IngredientActivity</string>
+    <string name="hop_variety">Hop Variety</string>
+
 </resources>

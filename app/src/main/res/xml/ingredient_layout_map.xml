@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <pair key="@string/hops" value="@layout/hop_layout" klass="HopIngredient"/>
+    <pair key="@string/grain" value="@layout/grain_layout"/>
+    <pair key="@string/liquid_malt" value="@layout/liquid_malt_layout"/>
+    <pair key="@string/powdered_malt" value="@layout/powdered_malt_layout"/>
+    <pair key="@string/liquid_yeast" value="@layout/liquid_yeast_layout"/>
+    <pair key="@string/dehydrated_yeast" value="@layout/dehydrated_yeast_layout"/>
+    <pair key="@string/water" value="@layout/water_layout"/>
+    <pair key="@string/adjunct" value="@layout/adjunct_layout"/>
+</resources>

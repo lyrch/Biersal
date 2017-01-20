@@ -1,0 +1,18 @@
+package com.lyrch.librebrew.model;
+
+import android.provider.BaseColumns;
+
+/**
+ * Created by jaredwilkerson on 12/15/16.
+ */
+public class HopReaderContract {
+    private HopReaderContract() {}
+
+    public static class HopEntry implements BaseColumns {
+        public static final String TABLE_NAME = "hops";
+        public static final String COLUMN_NAME_HOP_NAME = "name";
+        public static final String COLUMN_NAME_LIST_VERSION = "version";
+        public static final String COLUMN_NAME_MAX_ALPHA_ACID = "max_alpha_acid";
+        public static final String COLUMN_NAME_MIN_ALPAH_ACID = "min_alpha_acid";
+    }
+}

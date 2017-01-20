@@ -31,9 +31,8 @@ public class RecipeActivity extends Activity {
 	private OnClickListener newIngredientListener = new OnClickListener() {
         @Override
         public void onClick(View v) {
-            System.out.println("I'm listenting!");
-                Intent newRecipeIntent = new Intent(RecipeActivity.this, IngredientActivity.class);
-                RecipeActivity.this.startActivity(newRecipeIntent);
+			Intent newRecipeIntent = new Intent(RecipeActivity.this, IngredientChooserActivity.class);
+            RecipeActivity.this.startActivity(newRecipeIntent);
         }
 	};
 
