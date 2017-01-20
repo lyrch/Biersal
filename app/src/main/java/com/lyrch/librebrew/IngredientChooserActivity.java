@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.content.res.XmlResourceParser;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -23,8 +24,9 @@ import java.util.Map;
 
 
 public class IngredientChooserActivity extends ListActivity {
+    private static final String TAG = "IngredientChooser";
     private String[] ingredients;
-    private Map<String, Integer> layouts;
+    private Map<String, String> activities;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -33,7 +35,7 @@ public class IngredientChooserActivity extends ListActivity {
         Context context = getApplicationContext();
         Resources resources = context.getResources();
         ingredients = resources.getStringArray(R.array.ingredient_types);
-        layouts = loadLayoutMap();
+        activities = loadActivityMap();
 
         setAdapter();
     }
@@ -42,41 +44,50 @@ public class IngredientChooserActivity extends ListActivity {
         super.onListItemClick(listView, view, position, id);
 
         String ingredient=ingredients[position].toString();
-        //Intent ingredientIntent = new Intent(IngredientChooserActivity.this, IngredientActivity.class);
-        //Need to refactor loadLayoutMap and ingredient_layout_map.xml to store Activity class names for the ingredients instead of layout names
-        Intent ingredientIntent = new Intent((IngredientChooserActivity.this, Class.forName(layouts.get(ingredients[position].toString()))));
+        String ingredientKlass = activities.get(ingredient);
+        Class klass = null;
+        try {
+
+             klass = Class.forName("com.lyrch.librebrew." + ingredientKlass);
+        } catch (ClassNotFoundException e) {
+            Log.e(TAG, "Failed to find class for " + ingredientKlass);
+            e.printStackTrace();
+            //perhaps create an alert dialog to tell people what happened
+        }
+        //Intent ingredientIntent = new Intent(IngredientChooserActivity.this, HopActivity.class);
+        //Need to refactor loadActivityMap and ingredient_map.xmlre Activity class names for the ingredients instead of layout names
+        Intent ingredientIntent = new Intent(IngredientChooserActivity.this, klass);
         Bundle ingredientBundle = new Bundle();
 
-        ingredientBundle.putInt("IngredientLayout", layouts.get(ingredient));
-        ingredientIntent.putExtras(ingredientBundle);
+        //ingredientBundle.putInt("IngredientLayout", activities.get(ingredient));
+        //ingredientIntent.putExtras(ingredientBundle);
         IngredientChooserActivity.this.startActivity(ingredientIntent);
     }
 
-    private Map<String, Integer> loadLayoutMap() {
-        Map<String,Integer> ingredientLayouts = new HashMap<String,Integer>();
+    private Map<String, String> loadActivityMap() {
+        Map<String, String> ingredientKlasses = new HashMap<String,String>();
 
         Resources resources = getApplicationContext().getResources();
 
-        XmlResourceParser parser = resources.getXml(R.xml.ingredient_layout_map);
+        XmlResourceParser parser = resources.getXml(R.xml.ingredient_map);
         try {
             int node = parser.getEventType();
-            String key   = null;
-            int layoutId = -1;
+            String key         = null;
+            String layoutKlass = null;
 
             while(node != XmlPullParser.END_DOCUMENT) {
 
                 if(node == XmlPullParser.START_TAG) {
                     if (parser.getAttributeValue(null, "key") != null) {
                         key = resources.getString(resources.getIdentifier(parser.getAttributeValue(null, "key"), "string", getPackageName()));
-                        layoutId = resources.getIdentifier(parser.getAttributeValue(null, "value"), "string", getPackageName());
+                        layoutKlass = parser.getAttributeValue(null, "klass");
                     }
-                    System.out.println(key);
-                    System.out.println(layoutId);
-                } else if(node == XmlPullParser.END_TAG) {
-                    ingredientLayouts.put(key, layoutId);
-                    key   = null;
-                    layoutId = -1;
 
+                } else if(node == XmlPullParser.END_TAG) {
+                    ingredientKlasses.put(key, layoutKlass);
+                    key   = null;
+                    layoutKlass = null;
+                    Log.d(TAG, "Add " + key + " = " + layoutKlass);
                 }
 
                 node = parser.next();
@@ -85,7 +96,7 @@ public class IngredientChooserActivity extends ListActivity {
             e.printStackTrace();
         }
 
-        return ingredientLayouts;
+        return ingredientKlasses;
     }
 
     private void setAdapter() {

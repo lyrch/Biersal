@@ -22,6 +22,8 @@ local.properties
 /.idea/libraries
 .DS_Store
 /app/build
+/build
+/captures
 
 .project
 .metadata

@@ -8,7 +8,7 @@ import android.widget.AdapterView;
 import com.lyrch.librebrew.R;
 
 
-public class IngredientActivity extends Activity {
+public class HopActivity extends Activity {
 
 
     // Create ingredient object that creates callbacks for the view objects for each ingredient
@@ -16,8 +16,8 @@ public class IngredientActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Bundle ingredientBundle = this.getIntent().getExtras();
-        if (null != ingredientBundle)
-            setContentView(ingredientBundle.getInt("IngredientLayout"));
+        //Bundle ingredientBundle = this.getIntent().getExtras();
+       //if (null != ingredientBundle)
+        setContentView(R.layout.hop_layout);
     }
 }
