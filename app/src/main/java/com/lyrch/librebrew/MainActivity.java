@@ -15,6 +15,8 @@ public class MainActivity extends Activity {
 	Button newRecipeButton;
     Button recipeBookButton;
 
+    //TODO Need to create methods that check the versions of the ingredient xml files and the
+    // versions that are stored in the database, and update/create if needed.
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
