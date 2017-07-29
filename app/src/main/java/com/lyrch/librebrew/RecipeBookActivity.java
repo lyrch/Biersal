@@ -15,7 +15,7 @@ import android.widget.TextView;
 
 public class RecipeBookActivity extends ListActivity {
 
-    String[] recipes = { "nothing here!"};
+    String[] recipes = { "Time to add some recipes!"};
 	
 	private void findRecipes() {
 		File filesDir = new File(getFilesDir().toString());

@@ -47,7 +47,6 @@ public class IngredientChooserActivity extends ListActivity {
         String ingredientKlass = activities.get(ingredient);
         Class klass = null;
         try {
-
              klass = Class.forName("com.lyrch.librebrew." + ingredientKlass);
         } catch (ClassNotFoundException e) {
             Log.e(TAG, "Failed to find class for " + ingredientKlass);
