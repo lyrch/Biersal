@@ -30,10 +30,6 @@ public class HopReaderDbHelper extends SQLiteOpenHelper {
     private static final String SQL_DELETE_HOP_ENTRIES =
             "DELETE TABLE IF EXISTS " + HopReaderContract.HopEntry.TABLE_NAME;
 
-    public HopReaderDbHelper(Context context) {
-        super(context, DATABASE_NAME, null, DATABASE_VERSION);
-    }
-    /*
     private HopReaderDbHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
@@ -44,7 +40,7 @@ public class HopReaderDbHelper extends SQLiteOpenHelper {
         }
         return sInstance;
     }
-*/
+
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(SQL_CREATE_HOP_ENTRIES);
         loadHops(db);

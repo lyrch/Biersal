@@ -53,13 +53,9 @@ public class IngredientChooserActivity extends ListActivity {
             e.printStackTrace();
             //perhaps create an alert dialog to tell people what happened
         }
-        //Intent ingredientIntent = new Intent(IngredientChooserActivity.this, HopActivity.class);
-        //Need to refactor loadActivityMap and ingredient_map.xmlre Activity class names for the ingredients instead of layout names
         Intent ingredientIntent = new Intent(IngredientChooserActivity.this, klass);
         Bundle ingredientBundle = new Bundle();
 
-        //ingredientBundle.putInt("IngredientLayout", activities.get(ingredient));
-        //ingredientIntent.putExtras(ingredientBundle);
         IngredientChooserActivity.this.startActivity(ingredientIntent);
     }
 

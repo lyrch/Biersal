@@ -11,3 +11,6 @@ LibreBrew
 - Brew timer (signals when each step needs to be performed)
 - Beer journal for rating, tracking fermentation temps, etc.
 
+** Other Goals
+
+- Come up with a real name
